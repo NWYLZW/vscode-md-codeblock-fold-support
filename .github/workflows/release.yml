@@ -12,10 +12,6 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: development
-      NPM_CONFIG_PRODUCTION: "false"
-      NPM_CONFIG_INCLUDE: dev
 
     steps:
       - name: Check out repository
@@ -34,7 +30,15 @@ jobs:
         run: npm install -g npm@10.9.3
 
       - name: Install dependencies
-        run: npm ci --no-fund --no-audit
+        run: >
+          npm install --no-save --no-fund --no-audit
+          typescript@5.9.3
+          mocha@10.8.2
+          @types/node@22.15.30
+          @types/mocha@10.0.10
+          @types/vscode@1.110.0
+          @vscode/test-electron@2.5.2
+          @vscode/vsce@3.7.1
 
       - name: Run test suite
         run: npm test
