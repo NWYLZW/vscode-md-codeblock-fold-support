@@ -3,7 +3,7 @@
   "displayName": "Markdown Code Block Fold Support",
   "description": "Adds folding support for structured content inside Markdown fenced code blocks across JSON, JS/TS, CSS, YAML, and HTML-like languages.",
   "version": "0.0.3",
-  "publisher": "bytedance",
+  "publisher": "YiJie",
   "license": "MIT",
   "repository": {
     "type": "git",

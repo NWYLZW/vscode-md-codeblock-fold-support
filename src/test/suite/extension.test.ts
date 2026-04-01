@@ -5,7 +5,7 @@ import * as vscode from 'vscode';
 suite('Markdown code block folding', () => {
   suiteSetup(async () => {
     const extension = vscode.extensions.getExtension(
-      'bytedance.markdown-codeblock-fold-support',
+      'YiJie.markdown-codeblock-fold-support',
     );
 
     assert.ok(extension, 'The extension should be available in the test host.');
