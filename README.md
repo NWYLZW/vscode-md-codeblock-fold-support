@@ -50,3 +50,4 @@ Then use the normal VS Code folding controls inside the code block.
 - Commit the generated `release-assets/markdown-codeblock-fold-support-<version>.vsix`
 - Push to `main`
 - When `package.json` contains a version that does not already have a matching `vX.Y.Z` tag, GitHub Actions will tag and publish a GitHub Release automatically
+- A separate GitHub Actions workflow publishes the same VSIX to the VS Code Marketplace using the `VSCE_PAT` repository secret

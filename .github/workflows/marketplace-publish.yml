@@ -1,0 +1,59 @@
+name: Marketplace Publish
+
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Extension version to publish, for example 0.0.3
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Resolve version and ref
+        id: target
+        shell: bash
+        run: |
+          if [[ "${GITHUB_EVENT_NAME}" == "release" ]]; then
+            tag="${{ github.event.release.tag_name }}"
+            version="${tag#v}"
+          else
+            version="${{ inputs.version }}"
+            tag="v${version}"
+          fi
+
+          asset_path="release-assets/markdown-codeblock-fold-support-${version}.vsix"
+
+          echo "tag=${tag}" >> "$GITHUB_OUTPUT"
+          echo "version=${version}" >> "$GITHUB_OUTPUT"
+          echo "asset_path=${asset_path}" >> "$GITHUB_OUTPUT"
+
+      - name: Check out repository at release ref
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ steps.target.outputs.tag }}
+
+      - name: Verify release asset exists
+        shell: bash
+        run: |
+          test -f "${{ steps.target.outputs.asset_path }}"
+
+      - name: Install vsce
+        run: npm install -g @vscode/vsce@3.7.1
+
+      - name: Publish to VS Code Marketplace
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: >
+          vsce publish
+          --packagePath "${{ steps.target.outputs.asset_path }}"
+          --skip-duplicate
