@@ -1,6 +1,13 @@
 # Markdown Code Block Fold Support
 
+[![VS Code Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/YiJie.markdown-codeblock-fold-support?style=flat-square&label=Marketplace)](https://marketplace.visualstudio.com/items?itemName=YiJie.markdown-codeblock-fold-support)
+[![VS Code Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/YiJie.markdown-codeblock-fold-support?style=flat-square&label=Installs)](https://marketplace.visualstudio.com/items?itemName=YiJie.markdown-codeblock-fold-support)
+[![VS Code Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/YiJie.markdown-codeblock-fold-support?style=flat-square&label=Rating)](https://marketplace.visualstudio.com/items?itemName=YiJie.markdown-codeblock-fold-support)
+[![GitHub Release](https://img.shields.io/github/v/release/NWYLZW/vscode-md-codeblock-fold-support?style=flat-square&label=GitHub%20Release)](https://github.com/NWYLZW/vscode-md-codeblock-fold-support/releases)
+
 This extension adds folding ranges for structured content inside Markdown fenced code blocks.
+
+Install from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=YiJie.markdown-codeblock-fold-support).
 
 ## Current scope
 
