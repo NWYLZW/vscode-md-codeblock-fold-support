@@ -66,6 +66,7 @@
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "package": "vsce package --allow-missing-repository",
+    "package:release": "version=$(node -p \"require('./package.json').version\") && mkdir -p release-assets && vsce package --allow-missing-repository --out \"release-assets/markdown-codeblock-fold-support-${version}.vsix\"",
     "pretest": "npm run compile",
     "test": "node ./out/test/runTest.js"
   },
