@@ -60,3 +60,4 @@ Then use the normal VS Code folding controls inside the code block.
 - Push to `main`
 - When `package.json` contains a version that does not already have a matching `vX.Y.Z` tag, GitHub Actions will tag and publish a GitHub Release automatically
 - A separate GitHub Actions workflow publishes the same VSIX to the VS Code Marketplace using the `VSCE_PAT` repository secret
+- A separate GitHub Actions workflow publishes the same VSIX to Open VSX using the `OPEN_VSX_TOKEN` repository secret; the first publish also requires creating the `YiJie` namespace on open-vsx.org
