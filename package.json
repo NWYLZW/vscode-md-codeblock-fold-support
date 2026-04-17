@@ -2,7 +2,7 @@
   "name": "markdown-codeblock-fold-support",
   "displayName": "Markdown Code Block Fold Support",
   "description": "Adds folding support for structured content inside Markdown fenced code blocks across JSON, JS/TS, CSS, YAML, and HTML-like languages.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "YiJie",
   "license": "MIT",
   "repository": {
@@ -14,7 +14,7 @@
     "url": "https://github.com/NWYLZW/vscode-md-codeblock-fold-support/issues"
   },
   "engines": {
-    "vscode": "^1.110.0"
+    "vscode": "^1.53.0"
   },
   "categories": [
     "Programming Languages"
@@ -73,7 +73,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.15.30",
-    "@types/vscode": "^1.110.0",
+    "@types/vscode": "^1.53.0",
     "@vscode/vsce": "^3.7.1",
     "@vscode/test-electron": "^2.5.2",
     "mocha": "^10.8.2",

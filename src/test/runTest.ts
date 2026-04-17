@@ -1,11 +1,11 @@
-import * as path from 'node:path';
+import * as path from 'path';
 
 import { runTests } from '@vscode/test-electron';
 
 async function main(): Promise<void> {
   try {
     await runTests({
-      version: '1.111.0',
+      version: process.env.VSCODE_TEST_VERSION ?? '1.111.0',
       extensionDevelopmentPath: path.resolve(__dirname, '../..'),
       extensionTestsPath: path.resolve(__dirname, './suite/index'),
       launchArgs: ['--disable-extensions'],

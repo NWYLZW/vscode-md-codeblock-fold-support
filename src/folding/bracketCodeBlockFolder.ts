@@ -125,7 +125,7 @@ export class BracketCodeBlockFolder implements CodeBlockFolder {
           continue;
         }
 
-        const openEntry = stack.at(-1);
+        const openEntry = stack.length > 0 ? stack[stack.length - 1] : undefined;
         if (!openEntry || openEntry.close !== closingDelimiter.close) {
           column += closingDelimiter.close.length - 1;
           continue;

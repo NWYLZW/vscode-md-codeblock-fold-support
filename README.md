@@ -14,6 +14,7 @@ Install from the [VS Code Marketplace](https://marketplace.visualstudio.com/item
 - Supports `json`, `jsonc`, `javascript`, `typescript`, `jsx`, `tsx`, `css`, `scss`, `less`, `yaml`, `yml`, `html`, `xml`, `svg`, `vue`, and `svelte` fenced blocks inside Markdown
 - Keeps the folding engine language-pluggable for more embedded languages later
 - Works alongside the normal Markdown code fence folding
+- Supports VS Code `1.53.0` and newer
 
 ## Usage
 
@@ -48,6 +49,7 @@ Then use the normal VS Code folding controls inside the code block.
 - `npm run compile`
 - Press `F5` in VS Code to launch the extension host
 - `npm test` to run the integration test suite
+- `VSCODE_TEST_VERSION=1.53.0 npm test` to run the suite against a specific VS Code version
 - `npm run package` to build a `.vsix`
 
 ## Release

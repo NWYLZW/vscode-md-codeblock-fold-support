@@ -1,6 +1,13 @@
-import * as assert from 'node:assert/strict';
+import * as assert from 'assert';
 
 import * as vscode from 'vscode';
+
+import { createDefaultCodeBlockFolderRegistry } from '../../folding/codeBlockFolderRegistry';
+import { MarkdownCodeBlockFoldingProvider } from '../../folding/markdownCodeBlockFoldingProvider';
+
+const provider = new MarkdownCodeBlockFoldingProvider(
+  createDefaultCodeBlockFolderRegistry(),
+);
 
 suite('Markdown code block folding', () => {
   suiteSetup(async () => {
@@ -161,13 +168,9 @@ async function getEncodedFoldingRanges(
     content: contentLines.join('\n'),
   });
 
-  await vscode.window.showTextDocument(document);
-
-  const foldingRanges =
-    await vscode.commands.executeCommand<vscode.FoldingRange[]>(
-      'vscode.executeFoldingRangeProvider',
-      document.uri,
-    );
+  const foldingRanges = await Promise.resolve(
+    provider.provideFoldingRanges(document),
+  );
 
   return (foldingRanges ?? []).map((range) => `${range.start}:${range.end}`);
 }
